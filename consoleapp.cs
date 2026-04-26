@@ -1,5 +1,10 @@
-int addPrimeNumbersInNumericList(List<int> numbers)
+int AddPrimeNumbersInNumericList(List<int> numbers)
 {
+    if (numbers is null)
+    {
+        throw new ArgumentNullException(nameof(numbers));
+    }
+
     int sum = 0;
     foreach (int number in numbers)
     {
@@ -11,13 +16,15 @@ int addPrimeNumbersInNumericList(List<int> numbers)
     return sum;
 }
 
-private bool IsPrime(int number)
+bool IsPrime(int number)
 {
     if (number <= 1)
     {
         return false;
     }
-    for (int i = 2; i <= Math.Sqrt(number); i++)
+
+    int limit = (int)Math.Sqrt(number);
+    for (int i = 2; i <= limit; i++)
     {
         if (number % i == 0) return false;
     }
