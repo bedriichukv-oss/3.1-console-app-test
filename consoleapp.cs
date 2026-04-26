@@ -30,3 +30,8 @@ bool IsPrime(int number)
     }
     return true;
 }
+
+// create a list of numbers for testing
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };    
+int sumOfPrimes = AddPrimeNumbersInNumericList(numbers);
+Console.WriteLine($"Sum of prime numbers: {sumOfPrimes}");
