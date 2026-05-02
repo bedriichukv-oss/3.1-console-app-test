@@ -1,3 +1,5 @@
+// Adds together only the prime values found in the provided number list.
+// Throws ArgumentNullException when the input list is null.
 int AddPrimeNumbersInNumericList(List<int> numbers)
 {
     if (numbers is null)
@@ -16,6 +18,8 @@ int AddPrimeNumbersInNumericList(List<int> numbers)
     return sum;
 }
 
+// Returns true when the input is a prime number; otherwise false.
+// Uses trial division up to the square root of the input for efficiency.
 bool IsPrime(int number)
 {
     if (number <= 1)
@@ -31,7 +35,10 @@ bool IsPrime(int number)
     return true;
 }
 
-// create a list of numbers for testing
-List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };    
+// Sample usage:
+// 1) Create a test list of numbers.
+// 2) Sum only the prime values in that list.
+// 3) Print the resulting sum to the console.
+List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };    
 int sumOfPrimes = AddPrimeNumbersInNumericList(numbers);
 Console.WriteLine($"Sum of prime numbers: {sumOfPrimes}");
